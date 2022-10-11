@@ -1,0 +1,8 @@
+---
+title: "Desarrollo de un sitio web para la sistematización de la metodología EVM en el contexto del SIMOCUTE"
+author: "Manuel Vargas"
+format: revealjs
+editor: visual
+---
+
+## Contenidos
