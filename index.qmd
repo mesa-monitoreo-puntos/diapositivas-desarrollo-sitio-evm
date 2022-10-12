@@ -18,11 +18,15 @@ editor: visual
 
 ## Evaluación visual multitemporal
 - La evaluación visual multitemporal (EVM) es una metodología innovadora que proporciona información consistente y periódica acerca de la composición de la cobertura o uso de la tierra.
-- Su implementación requiere del manejo de diferentes tipos de datos y del uso de herramientas especializadas como sistemas de información geográfica (SIG) y programas estadísticos, entre otros.
+- Su implementación requiere del manejo de diferentes tipos de datos y del uso de herramientas especializadas como sistemas de información geográfica (SIG), servicios en la nube (ej. Google Earth Engine, Google Collect) y programas estadísticos, entre otros.
 
 ## Sistematización de la EVM
 - Es conveniente automatizar el procesamiento de los datos por medio de lenguajes de programación (ej. R, Python).
-- La sistematización de la metodología requiere de la elaboración de documentos técnicos con notación científica, así como de la inclusión de tablas, gráficos estadísticos, mapas, figuras, citas bibliográficas y código fuente, entre otros elementos.
+- La sistematización de la metodología requiere de la elaboración de documentos técnicos con componentes y notación científica:
+    - Ecuaciones, fórmulas y notación matemática en general.
+    - Citas bibliográficas, figuras.
+    - Tablas, gráficos estadísticos, mapas.
+    - Código fuente.
 
 ---
 
@@ -225,7 +229,7 @@ legend(
 - Es una plataforma web para alojar el código fuente y la documentación de proyectos que utilizan el sistema de control de versiones Git.
 - Es la plataforma más popular de colaboración de proyectos de código abierto.
 - Ofrece servicios adicionales como alojamiento de sitios web.
-- Los servicios tienen una plan gratuito que puede ser suficiente para los requerimientos de muchos proyectos.
+- Los servicios tienen un plan gratuito que puede ser suficiente para los requerimientos de muchos proyectos.
 
 ## Propuesta para el desarrollo de un sitio para la EVM en SIMOCUTE
 - Desarrollo en Quarto (R + Markdown).
