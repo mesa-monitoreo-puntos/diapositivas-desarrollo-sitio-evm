@@ -83,7 +83,7 @@ knitr::include_graphics(rep("img/allaire-2022.png"))
 
 ## Markdown
 
-- Lenguaje de marcado ligero ampliamente utilizado en comunicación científica, documentación de programas e investigación reproducible.
+- [Markdown](https://daringfireball.net/projects/markdown/) es un lenguaje de marcado ligero ampliamente utilizado en comunicación científica, documentación de programas e investigación reproducible.
 - Se convierte fácilmente al lenguaje de marcado de hipertexto (HTML), el más utilizado para escribir páginas web.
 - Se combina con otros lenguajes de marcado y de programación.
 - Puede exportarse a muchos formatos de salida (PDF, MS Word, HTML, MS PowerPoint, ePub, Libre Office, etc.).
@@ -125,13 +125,13 @@ Texto normal
 ::::
 
 ## R
-- Es un lenguaje de programación enfocado en análisis estadístico.
+- [R](https://www.r-project.org/) es un lenguaje de programación enfocado en análisis estadístico.
 - Es utilizado en diversas áreas de investigación, incluyendo ciencia de datos, *big data* y aprendizaje automático.
 - Se distribuye como software libre.
 - Cuenta con varias bibliotecas especializadas en graficación estadística y manejo y análisis de datos geoespaciales.
 
 ## Quarto
-- Es un sistema de publicación de documentos técnicos y científicos, basado en código abierto.
+- [Quarto](https://quarto.org/) es un sistema de publicación de documentos técnicos y científicos, basado en código abierto.
 - Combina código en R (Python, Julia y Observable), y sus salidas (ej. tablas, gráficos, mapas), con Markdown.
 - Es la "siguiente generación" de R Markdown.
 - Se utiliza para publicar artículos académicos, reportes, presentaciones, sitios web, *blogs* y libros en HTML, PDF, LaTeX, MS Word, ePub y otros formatos.
@@ -148,7 +148,7 @@ format:
     code-fold: false
 ---
 
-Relación entre cantidades de pacientes de [COVID-19](https://es.wikipedia.org/wiki/COVID-19) hospitalizados en **salón** y en **UCI**.
+Pacientes de [COVID](https://es.wikipedia.org/wiki/COVID-19) en **salón** y en **UCI**.
 
 ```{r}`r ''`
 #| label: graficacion-covid
@@ -185,7 +185,7 @@ legend(
 
 ## Documento Quarto (salida)
 
-Relación entre cantidades de pacientes de [COVID-19](https://es.wikipedia.org/wiki/COVID-19) hospitalizados en **salón** y en **UCI**.
+Pacientes de [COVID](https://es.wikipedia.org/wiki/COVID-19) en **salón** y en **UCI**.
 
 ```{r}
 #| label: graficacion-covid
@@ -220,15 +220,15 @@ legend(
 ```
 
 ## Git
-- Es un sistema de control de versiones que permite mantener el registro de cambios realizados en archivos de código fuente o de cualquier otro tipo.
+- [Git](https://git-scm.com/) es un sistema de control de versiones que permite mantener el registro de cambios realizados en archivos de código fuente o de cualquier otro tipo.
 - Permite recuperar versiones anteriores de un archivo.
 - Permite manterner versiones paralelas (*branches*) de un archivo.
 - Facilita el trabajo colaborativo, al integrar las modificaciones implementadas por varias personas.
 
 ## GitHub
-- Es una plataforma web para alojar el código fuente y la documentación de proyectos que utilizan el sistema de control de versiones Git.
+- [GitHub](https://github.com/) es una plataforma web para alojar el código fuente y la documentación de proyectos que utilizan el sistema de control de versiones Git.
 - Es la plataforma más popular de colaboración de proyectos de código abierto.
-- Ofrece servicios adicionales como alojamiento de sitios web.
+- Ofrece servicios adicionales como [GitHub Pages](https://pages.github.com/), para alojamiento de sitios web.
 - Los servicios tienen un plan gratuito que puede ser suficiente para los requerimientos de muchos proyectos.
 
 ## Propuesta para el desarrollo de un sitio para la EVM en SIMOCUTE
@@ -240,6 +240,8 @@ legend(
 ## FIESTA
 - Forest Inventory Estimation for Analysis (FIESTA) es un paquete de R que apoya la metodología de EVM.
 - Fue desarrollado por el Servicio Forestal de Estados Unidos.
+- En 2022 se desarrolló una nueva versión que aún está en pruebas y que contiene algunos cambios en la estructura del programa.
+- Se pretende mejorar (o adaptar) su documentación mediante manuales detallados y el desarrollo de casos de estudio, así como de capacitación en R y otras herramientas relacionadas.
 
 ## Puntos de muestreo
 
@@ -303,7 +305,17 @@ ggplot(puntos_muestreo, aes(x = lon, y = lat, )) +
 ## Propuesta para la sistematización de la documentación de FIESTA
 - Elaboración de documentos en Quarto (R + Markdown).
 - Traducción al español.
+- Actualización de los recursos de documentación existentes a la nueva versión del programa.
 - Desarrollo de un caso de estudio detallado.
 - Alojamiento en GitHub.
 - Desarrollo colaborativo a través de un equipo de trabajo.
 - Capacitación.
+
+## Algunos enlaces de interés
+
+- [Repositorios en GitHub de la Mesa de Monitoreo por Puntos](https://github.com/mesa-monitoreo-puntos).
+- [Recursos sobre Quarto](https://github.com/mcanouil/awesome-quarto).
+- Ejemplo de sitios desarrollados con R Markdown/Quarto:
+    - [Curso de la Escuela de Geografía de la UCR](https://gf0604-procesamientodatosgeograficos.github.io/2022-i/).
+    - [Curso de la Maestría en Gestión del Recurso Hídrico](https://pf0953-programacionr.github.io/2022-ii/).
+    - [Tablero de control](https://gf0604-procesamientodatosgeograficos.github.io/2022-i-mamiferos-flexdashboard/).
