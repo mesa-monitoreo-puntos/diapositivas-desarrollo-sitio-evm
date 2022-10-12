@@ -11,10 +11,10 @@ editor: visual
 ## Contenidos
 
 - Requerimientos para la sistematización de la EVM.
-- Escritura técnica y científica.
-- Markdown.
-- Quarto.
-- Git.
+- Herramientas para el desarrollo de documentos técnicos y científicos.
+- Markdown, R y Quarto.
+- Git y Github.
+- Sistematización de la documentación de FIESTA.
 
 ## Evaluación visual multitemporal
 - La evaluación visual multitemporal (EVM) es una metodología innovadora que proporciona información consistente y periódica acerca de la composición de la cobertura o uso de la tierra.
@@ -39,7 +39,7 @@ knitr::include_graphics(rep("img/vega-araya-2021.png"))
 
 ::: {.column width="50%"}
 
-- Documentos que incorporan el código fuente requerido para la generación de sus componentes.
+- Son documentos que incorporan el código fuente requerido para la generación de sus componentes.
 - Facilitan la automatización y la reproducibilidad.
 - "*More than 70% of researchers have tried and failed to reproduce another scientist's experiments*" (Baker, 2016).
 
@@ -120,9 +120,15 @@ Texto normal
 
 ::::
 
+## R
+- Es un lenguaje de programación enfocado en análisis estadístico.
+- Es utilizado en diversas áreas de investigación, incluyendo ciencia de datos, *big data* y aprendizaje automático.
+- Se distribuye como software libre.
+- Cuenta con varias bibliotecas especializadas en graficación estadística y manejo y análisis de datos geoespaciales.
+
 ## Quarto
 - Es un sistema de publicación de documentos técnicos y científicos, basado en código abierto.
-- Combina código en R, y sus salidas (ej. tablas, gráficos, mapas), con la sintaxis de Markdown.
+- Combina código en R (Python, Julia y Observable), y sus salidas (ej. tablas, gráficos, mapas), con Markdown.
 - Es la "siguiente generación" de R Markdown.
 - Se utiliza para publicar artículos académicos, reportes, presentaciones, sitios web, *blogs* y libros en HTML, PDF, LaTeX, MS Word, ePub y otros formatos.
 - Puede crear contenido científico, incluyendo ecuaciones, citas bibliográficas, referencias cruzadas y figuras.
@@ -210,12 +216,31 @@ legend(
 ```
 
 ## Git
-- Es un sistema de control de versiones que permite mantener el registro de cambios realizados en archivos.
-- Facilita el trabajo colaborativo al reunir las modificaciones hechas por varias personas.
+- Es un sistema de control de versiones que permite mantener el registro de cambios realizados en archivos de código fuente o de cualquier otro tipo.
+- Permite recuperar versiones anteriores de un archivo.
+- Permite manterner versiones paralelas (*branches*) de un archivo.
+- Facilita el trabajo colaborativo, al integrar las modificaciones implementadas por varias personas.
 
 ## GitHub
-
 - Es una plataforma web para alojar el código fuente y la documentación de proyectos que utilizan el sistema de control de versiones Git.
 - Es la plataforma más popular de colaboración de proyectos de código abierto.
 - Ofrece servicios adicionales como alojamiento de sitios web.
 - Los servicios tienen una plan gratuito que puede ser suficiente para los requerimientos de muchos proyectos.
+
+## Propuesta para el desarrollo de un sitio para la EVM en SIMOCUTE
+- Desarrollo en Quarto (R + Markdown).
+- Alojamiento en GitHub.
+- Desarrollo colaborativo a través de un equipo de trabajo.
+- Capacitación.
+
+## FIESTA
+- Forest Inventory Estimation for Analysis (FIESTA) es un paquete de R que apoya la metodología de EVM.
+- Fue desarrollado por el Servicio Forestal de Estados Unidos.
+
+## Propuesta para la sistematización de la documentación de FIESTA
+- Elaboración de documentos en Quarto (R + Markdown).
+- Traducción al español.
+- Desarrollo de un caso de estudio detallado.
+- Alojamiento en GitHub.
+- Desarrollo colaborativo a través de un equipo de trabajo.
+- Capacitación.
