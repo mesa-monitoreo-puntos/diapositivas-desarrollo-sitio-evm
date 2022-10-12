@@ -1,8 +1,129 @@
 ---
-title: "Desarrollo de un sitio web para la sistematización de la metodología EVM en el contexto del SIMOCUTE"
+title: "Desarrollo de un sitio web para la sistematización de la EVM en el contexto del SIMOCUTE"
 author: "Manuel Vargas"
-format: revealjs
+date: "2022-10-12"
+format:
+  revealjs: 
+    theme: dark
 editor: visual
 ---
 
 ## Contenidos
+
+- Requerimientos para la sistematización de la EVM.
+- Escritura técnica y científica.
+- Markdown.
+- Quarto.
+- Git y GitHub.
+
+## Evaluación visual multitemporal
+- La evaluación visual multitemporal (EVM) es una metodología innovadora que proporciona información consistente y periódica acerca de la composición de la cobertura o uso de la tierra.
+- Su implementación requiere del manejo de diferentes tipos de datos y del uso de herramientas especializadas como sistemas de información geográfica (SIG) y programas estadísticos, entre otros.
+
+## Sistematización de la EVM
+- Es conveniente automatizar el procesamiento de los datos por medio de lenguajes de programación (ej. R, Python).
+- La sistematización de la metodología requiere de la elaboración de documentos técnicos con notación científica, así como de la inclusión de tablas, gráficos estadísticos, mapas, figuras, citas bibliográficas y código fuente, entre otros elementos.
+
+---
+
+```{r}
+#| label: vega-araya-2021
+#| fig-cap: "Documento con bloque de código en R y mapa resultante. Fuente: (Vega-Araya, 2021)."
+#| echo: false
+knitr::include_graphics(rep("img/vega-araya-2021.png"))
+```
+
+## Documentos computacionales
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Documentos que incorporan el código fuente requerido para la generación de sus componentes.
+- Facilitan la automatización y la reproducibilidad.
+- "*More than 70% of researchers have tried and failed to reproduce another scientist's experiments*" (Baker, 2016).
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: baker-2016
+#| fig-cap: "Fuente: (Baker, 2016)."
+#| echo: false
+
+knitr::include_graphics(rep("img/baker-2016.jpg"))
+```
+
+:::
+
+::::
+
+## Espectro de reproducibilidad
+
+```{r}
+#| label: graser-2021
+#| fig-cap: "Fuente: Anita Graser, con base en (Peng, 2001)."
+#| echo: false
+knitr::include_graphics(rep("img/graser-2021.png"))
+```
+
+## Herramientas para escritura técnica y científica
+
+```{r}
+#| label: allaire-2022
+#| fig-cap: "Fuente: (Allaire, 2022)."
+#| echo: false
+knitr::include_graphics(rep("img/allaire-2022.png"))
+```
+
+## Markdown
+
+- Lenguaje de marcado ligero ampliamente utilizado en comunicación científica, documentación de programas e investigación reproducible.
+- Se convierte fácilmente al lenguaje de marcado de hipertexto (HTML).
+- Se combina con otros lenguajes y sintaxis.
+- Puede exportarse a muchos formatos de salida (PDF, MS Word, HTML, MS PowerPoint, ePub, Libre Office, etc.).
+
+## Ejemplo de sintaxis Markdown
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+````md
+### Título
+#### Subtítulo
+Texto normal  
+**Texto en negrita**  
+*Texto en itálica*
+
+[Enlace a sitio web](https://simocute.go.cr)
+![](img/perro.jpg)
+
+````
+
+:::
+
+::: {.column width="50%"}
+
+### Título
+#### Subtítulo
+Texto normal  
+**Texto en negrita**  
+*Texto en itálica*
+
+[Enlace a sitio web](https://simocute.go.cr)
+
+![](img/perro.jpg)
+
+:::
+
+::::
+
+## Quarto
+- Es un sistema de publicación de documentos técnicos y científicos, basado en código abierto.
+- Es la "siguiente generación" de R Markdown.
+- Combina código en R, y sus salidas (ej. tablas, gráficos, mapas), con la sintaxis de Markdown.
+- Se utiliza para publicar artículos académicos, reportes, presentaciones, sitios web, *blogs* y libros en HTML, PDF, MS Word, ePub y otros formatos.
+- Puede crear contenido científico, incluyendo ecuaciones, citas bibliográficas, referencias cruzadas y figuras.
+- 
