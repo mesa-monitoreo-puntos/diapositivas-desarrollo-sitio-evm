@@ -14,7 +14,7 @@ editor: visual
 - Escritura técnica y científica.
 - Markdown.
 - Quarto.
-- Git y GitHub.
+- Git.
 
 ## Evaluación visual multitemporal
 - La evaluación visual multitemporal (EVM) es una metodología innovadora que proporciona información consistente y periódica acerca de la composición de la cobertura o uso de la tierra.
@@ -80,11 +80,11 @@ knitr::include_graphics(rep("img/allaire-2022.png"))
 ## Markdown
 
 - Lenguaje de marcado ligero ampliamente utilizado en comunicación científica, documentación de programas e investigación reproducible.
-- Se convierte fácilmente al lenguaje de marcado de hipertexto (HTML).
-- Se combina con otros lenguajes y sintaxis.
+- Se convierte fácilmente al lenguaje de marcado de hipertexto (HTML), el más utilizado para escribir páginas web.
+- Se combina con otros lenguajes de marcado y de programación.
 - Puede exportarse a muchos formatos de salida (PDF, MS Word, HTML, MS PowerPoint, ePub, Libre Office, etc.).
 
-## Ejemplo de sintaxis Markdown
+## Ejemplo de documento Markdown
 
 :::: {.columns}
 
@@ -122,8 +122,100 @@ Texto normal
 
 ## Quarto
 - Es un sistema de publicación de documentos técnicos y científicos, basado en código abierto.
-- Es la "siguiente generación" de R Markdown.
 - Combina código en R, y sus salidas (ej. tablas, gráficos, mapas), con la sintaxis de Markdown.
-- Se utiliza para publicar artículos académicos, reportes, presentaciones, sitios web, *blogs* y libros en HTML, PDF, MS Word, ePub y otros formatos.
+- Es la "siguiente generación" de R Markdown.
+- Se utiliza para publicar artículos académicos, reportes, presentaciones, sitios web, *blogs* y libros en HTML, PDF, LaTeX, MS Word, ePub y otros formatos.
 - Puede crear contenido científico, incluyendo ecuaciones, citas bibliográficas, referencias cruzadas y figuras.
-- 
+
+## Documento Quarto (código fuente)
+
+````md
+---
+title: "Visualización de datos de COVID"
+format: 
+  html:
+    toc: true
+    code-fold: false
+---
+
+Relación entre cantidades de pacientes de [COVID-19](https://es.wikipedia.org/wiki/COVID-19) hospitalizados en **salón** y en **UCI**.
+
+```{r}`r ''`
+#| label: graficacion-covid
+#| include: true
+#| echo: false
+
+# Carga de archivo CSV con datos de COVID en Costa Rica
+covid_general<- read.csv("datos/05_30_22_CSV_GENERAL.csv", sep = ";")
+
+# Conversión de str a Date de la columna fecha
+covid_general$FECHA <- as.Date(covid_general$FECHA, format = "%d/%m/%Y")
+
+# Gráfico de dispersión
+plot(
+  x = covid_general$salon,
+  y = covid_general$UCI,
+  pch = 16,  
+  col = factor(format(covid_general$FECHA, "%Y")),  # color de los puntos con base en el año
+  main = "Pacientes en salón vs pacientes en UCI al 2020-05-30",
+  xlab = "Pacientes hospitalizados en salón",
+  ylab = "Pacientes hospitalizados en UCI"
+)
+
+# Leyenda
+legend(
+  x = "topleft",
+  inset = 0.03,
+  pch = 16,
+  legend = levels(factor(format(covid_general$FECHA, "%Y"))),
+  col = seq_along(factor(format(covid_general$FECHA, "%Y")))
+)
+```
+````
+
+## Documento Quarto (salida)
+
+Relación entre cantidades de pacientes de [COVID-19](https://es.wikipedia.org/wiki/COVID-19) hospitalizados en **salón** y en **UCI**.
+
+```{r}
+#| label: graficacion-covid
+#| include: true
+#| echo: false
+
+# Carga de archivo CSV con datos de COVID en Costa Rica
+covid_general<- read.csv("datos/05_30_22_CSV_GENERAL.csv", sep = ";")
+
+# Conversión de str a Date de la columna fecha
+covid_general$FECHA <- as.Date(covid_general$FECHA, format = "%d/%m/%Y")
+
+# Gráfico de dispersión
+plot(
+  x = covid_general$salon,
+  y = covid_general$UCI,
+  pch = 16,  
+  col = factor(format(covid_general$FECHA, "%Y")),  # color de los puntos con base en el año
+  main = "Pacientes en salón vs pacientes en UCI al 2020-05-30",
+  xlab = "Pacientes hospitalizados en salón",
+  ylab = "Pacientes hospitalizados en UCI"
+)
+
+# Leyenda
+legend(
+  x = "topleft",
+  inset = 0.03,
+  pch = 16,
+  legend = levels(factor(format(covid_general$FECHA, "%Y"))),
+  col = seq_along(factor(format(covid_general$FECHA, "%Y")))
+)
+```
+
+## Git
+- Es un sistema de control de versiones que permite mantener el registro de cambios realizados en archivos.
+- Facilita el trabajo colaborativo al reunir las modificaciones hechas por varias personas.
+
+## GitHub
+
+- Es una plataforma web para alojar el código fuente y la documentación de proyectos que utilizan el sistema de control de versiones Git.
+- Es la plataforma más popular de colaboración de proyectos de código abierto.
+- Ofrece servicios adicionales como alojamiento de sitios web.
+- Los servicios tienen una plan gratuito que puede ser suficiente para los requerimientos de muchos proyectos.

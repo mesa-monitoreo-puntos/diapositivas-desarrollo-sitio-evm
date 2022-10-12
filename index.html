@@ -396,7 +396,7 @@
 <li>Escritura técnica y científica.</li>
 <li>Markdown.</li>
 <li>Quarto.</li>
-<li>Git y GitHub.</li>
+<li>Git.</li>
 </ul>
 </section>
 <section id="evaluación-visual-multitemporal" class="slide level2">
@@ -452,13 +452,13 @@
 <h2>Markdown</h2>
 <ul>
 <li>Lenguaje de marcado ligero ampliamente utilizado en comunicación científica, documentación de programas e investigación reproducible.</li>
-<li>Se convierte fácilmente al lenguaje de marcado de hipertexto (HTML).</li>
-<li>Se combina con otros lenguajes y sintaxis.</li>
+<li>Se convierte fácilmente al lenguaje de marcado de hipertexto (HTML), el más utilizado para escribir páginas web.</li>
+<li>Se combina con otros lenguajes de marcado y de programación.</li>
 <li>Puede exportarse a muchos formatos de salida (PDF, MS Word, HTML, MS PowerPoint, ePub, Libre Office, etc.).</li>
 </ul>
 </section>
-<section id="ejemplo-de-sintaxis-markdown" class="slide level2">
-<h2>Ejemplo de sintaxis Markdown</h2>
+<section id="ejemplo-de-documento-markdown" class="slide level2">
+<h2>Ejemplo de documento Markdown</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">### Título</span></span>
@@ -484,11 +484,75 @@
 <h2>Quarto</h2>
 <ul>
 <li>Es un sistema de publicación de documentos técnicos y científicos, basado en código abierto.</li>
-<li>Es la “siguiente generación” de R Markdown.</li>
 <li>Combina código en R, y sus salidas (ej. tablas, gráficos, mapas), con la sintaxis de Markdown.</li>
-<li>Se utiliza para publicar artículos académicos, reportes, presentaciones, sitios web, <em>blogs</em> y libros en HTML, PDF, MS Word, ePub y otros formatos.</li>
+<li>Es la “siguiente generación” de R Markdown.</li>
+<li>Se utiliza para publicar artículos académicos, reportes, presentaciones, sitios web, <em>blogs</em> y libros en HTML, PDF, LaTeX, MS Word, ePub y otros formatos.</li>
 <li>Puede crear contenido científico, incluyendo ecuaciones, citas bibliográficas, referencias cruzadas y figuras.</li>
-<li></li>
+</ul>
+</section>
+<section id="documento-quarto-código-fuente" class="slide level2">
+<h2>Documento Quarto (código fuente)</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "Visualización de datos de COVID"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">  html:</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">    toc: true</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co">    code-fold: false</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co">---</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>Relación entre cantidades de pacientes de <span class="co">[</span><span class="ot">COVID-19</span><span class="co">](https://es.wikipedia.org/wiki/COVID-19)</span> hospitalizados en **salón** y en **UCI**.</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="in">```{r}</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="co">#| label: graficacion-covid</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="co">#| include: true</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="co"># Carga de archivo CSV con datos de COVID en Costa Rica</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>covid_general<span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"datos/05_30_22_CSV_GENERAL.csv"</span>, <span class="at">sep =</span> <span class="st">";"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18"></a></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="co"># Conversión de str a Date de la columna fecha</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a>covid_general<span class="sc">$</span>FECHA <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(covid_general<span class="sc">$</span>FECHA, <span class="at">format =</span> <span class="st">"%d/%m/%Y"</span>)</span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="co"># Gráfico de dispersión</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="fu">plot</span>(</span>
+<span id="cb2-24"><a href="#cb2-24"></a>  <span class="at">x =</span> covid_general<span class="sc">$</span>salon,</span>
+<span id="cb2-25"><a href="#cb2-25"></a>  <span class="at">y =</span> covid_general<span class="sc">$</span>UCI,</span>
+<span id="cb2-26"><a href="#cb2-26"></a>  <span class="at">pch =</span> <span class="dv">16</span>,  </span>
+<span id="cb2-27"><a href="#cb2-27"></a>  <span class="at">col =</span> <span class="fu">factor</span>(<span class="fu">format</span>(covid_general<span class="sc">$</span>FECHA, <span class="st">"%Y"</span>)),  <span class="co"># color de los puntos con base en el año</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a>  <span class="at">main =</span> <span class="st">"Pacientes en salón vs pacientes en UCI al 2020-05-30"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29"></a>  <span class="at">xlab =</span> <span class="st">"Pacientes hospitalizados en salón"</span>,</span>
+<span id="cb2-30"><a href="#cb2-30"></a>  <span class="at">ylab =</span> <span class="st">"Pacientes hospitalizados en UCI"</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a>)</span>
+<span id="cb2-32"><a href="#cb2-32"></a></span>
+<span id="cb2-33"><a href="#cb2-33"></a><span class="co"># Leyenda</span></span>
+<span id="cb2-34"><a href="#cb2-34"></a><span class="fu">legend</span>(</span>
+<span id="cb2-35"><a href="#cb2-35"></a>  <span class="at">x =</span> <span class="st">"topleft"</span>,</span>
+<span id="cb2-36"><a href="#cb2-36"></a>  <span class="at">inset =</span> <span class="fl">0.03</span>,</span>
+<span id="cb2-37"><a href="#cb2-37"></a>  <span class="at">pch =</span> <span class="dv">16</span>,</span>
+<span id="cb2-38"><a href="#cb2-38"></a>  <span class="at">legend =</span> <span class="fu">levels</span>(<span class="fu">factor</span>(<span class="fu">format</span>(covid_general<span class="sc">$</span>FECHA, <span class="st">"%Y"</span>))),</span>
+<span id="cb2-39"><a href="#cb2-39"></a>  <span class="at">col =</span> <span class="fu">seq_along</span>(<span class="fu">factor</span>(<span class="fu">format</span>(covid_general<span class="sc">$</span>FECHA, <span class="st">"%Y"</span>)))</span>
+<span id="cb2-40"><a href="#cb2-40"></a>)</span>
+<span id="cb2-41"><a href="#cb2-41"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="documento-quarto-salida" class="slide level2">
+<h2>Documento Quarto (salida)</h2>
+<p>Relación entre cantidades de pacientes de <a href="https://es.wikipedia.org/wiki/COVID-19">COVID-19</a> hospitalizados en <strong>salón</strong> y en <strong>UCI</strong>.</p>
+
+<img data-src="index_files/figure-revealjs/graficacion-covid-1.png" width="960" class="r-stretch"></section>
+<section id="git" class="slide level2">
+<h2>Git</h2>
+<ul>
+<li>Es un sistema de control de versiones que permite mantener el registro de cambios realizados en archivos.</li>
+<li>Facilita el trabajo colaborativo al reunir las modificaciones hechas por varias personas.</li>
+</ul>
+</section>
+<section id="github" class="slide level2">
+<h2>GitHub</h2>
+<ul>
+<li>Es una plataforma web para alojar el código fuente y la documentación de proyectos que utilizan el sistema de control de versiones Git.</li>
+<li>Es la plataforma más popular de colaboración de proyectos de código abierto.</li>
+<li>Ofrece servicios adicionales como alojamiento de sitios web.</li>
+<li>Los servicios tienen una plan gratuito que puede ser suficiente para los requerimientos de muchos proyectos.</li>
 </ul>
 <div class="footer footer-default">
 
