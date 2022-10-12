@@ -4,7 +4,7 @@ author: "Manuel Vargas"
 date: "2022-10-12"
 format:
   revealjs: 
-    theme: dark
+    theme: default
 editor: visual
 ---
 
@@ -236,6 +236,65 @@ legend(
 ## FIESTA
 - Forest Inventory Estimation for Analysis (FIESTA) es un paquete de R que apoya la metodología de EVM.
 - Fue desarrollado por el Servicio Forestal de Estados Unidos.
+
+## Puntos de muestreo
+
+```{r}
+#| label: fiesta-tabla
+
+library(dplyr)
+
+puntos_muestreo <-
+  readr::read_csv('datos/pnt_csv.csv')
+
+puntos_muestreo %>%
+  select(sample_id, lon, lat, T1.COBERTURA) %>%
+  DT::datatable(
+    colnames = c("sample_id", "lon", "lat", "T1.COBERTURA"),
+    options = list(
+      pageLength = 5,
+      language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')
+    )
+  )
+```
+
+## Graficación
+
+```{r}
+#| label: fiesta-grafico
+
+library(dplyr)
+library(ggplot2)
+library(plotly)
+
+puntos_muestreo <-
+  readr::read_csv('datos/pnt_csv.csv')
+
+grafico_ggplot2 <-
+  puntos_muestreo %>%
+  ggplot(aes(x = reorder(T1.COBERTURA, T1.COBERTURA, length))) +
+  xlab("T1.COBERTURA") +
+  ylab("Cantidad de puntos") +
+  geom_bar() +
+  coord_flip() +
+  theme_minimal()
+
+ggplotly(grafico_ggplot2)
+```
+
+## Mapeo
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(plotly)
+
+puntos_muestreo <-
+  readr::read_csv('datos/pnt_csv.csv')
+
+ggplot(puntos_muestreo, aes(x = lon, y = lat, )) +
+  geom_point(size = 2)
+```
 
 ## Propuesta para la sistematización de la documentación de FIESTA
 - Elaboración de documentos en Quarto (R + Markdown).
